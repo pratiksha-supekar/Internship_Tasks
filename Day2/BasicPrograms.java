@@ -1,0 +1,88 @@
+
+
+public class BasicPrograms {
+
+    // 1. Check Even or Odd
+    static void evenOdd(int n) {
+        if (n % 2 == 0) {
+            System.out.println(n + " is Even");
+        } else {
+            System.out.println(n + " is Odd");
+        }
+    }
+
+    // 2. Find Largest of Three Numbers
+    static void largest(int a, int b, int c) {
+        if (a >= b && a >= c) {
+            System.out.println("Largest: " + a);
+        } else if (b >= a && b >= c) {
+            System.out.println("Largest: " + b);
+        } else {
+            System.out.println("Largest: " + c);
+        }
+    }
+
+    // 3. Factorial
+    static void factorial(int n) {
+        if (n < 0) {
+            System.out.println("Factorial is not defined for negative numbers");
+            return;
+        }
+
+        long fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact = fact * i;
+        }
+        System.out.println("Factorial: " + fact);
+    }
+
+    // 4. Check Prime Number
+    static void prime(int n) {
+        if (n < 2) {
+            System.out.println(n + " is Not Prime");
+            return;
+        }
+
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                System.out.println(n + " is Not Prime");
+                return;
+            }
+        }
+        System.out.println(n + " is Prime");
+    }
+
+    // 5. Reverse a Number
+    static void reverse(int n) {
+        int reverse = 0;
+        while (n != 0) {
+            int digit = n % 10;
+            reverse = reverse * 10 + digit;
+            n = n / 10;
+        }
+        System.out.println("Reversed Number: " + reverse);
+    }
+
+    // 6. Multiplication Table
+    static void table(int n) {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(n + " x " + i + " = " + (n * i));
+        }
+    }
+
+    // Main Method
+    public static void main(String[] args) {
+
+        evenOdd(10);
+
+        largest(10, 25, 15);
+
+        factorial(5);
+
+        prime(7);
+
+        reverse(1234);
+
+        table(5);
+    }
+}
